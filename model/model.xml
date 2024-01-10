@@ -1,4 +1,4 @@
-<project name="TurbofanGitHubPublic" threads="1" pubsub="auto" heartbeat-interval="1">
+<?xml version="1.0" ?><project heartbeat-interval="1" name="TurbofanGitHubPublic" threads="1" pubsub="auto">
   <metadata>
     <meta id="studioUploadedBy">sastest1</meta>
     <meta id="studioUploaded">1704886532064</meta>
@@ -9,40 +9,40 @@
   <contqueries>
     <contquery name="cq1">
       <windows>
-        <window-source pubsub="true" insert-only="true" autogen-key="true" index="pi_EMPTY" name="turbofan_data">
+        <window-source insert-only="true" name="turbofan_data" index="pi_EMPTY" pubsub="true" autogen-key="true">
           <schema>
             <fields>
-              <field name="Event_ID" type="int64" key="true"/>
-              <field name="Engine_ID" type="string"/>
-              <field name="DATETIME" type="string"/>
-              <field name="Oper_Set_1" type="double"/>
-              <field name="Oper_Set_2" type="double"/>
-              <field name="Oper_Set_3" type="double"/>
-              <field name="Fan_Inlet_Temp" type="double"/>
-              <field name="LPC_Outlet_Temp" type="double"/>
-              <field name="HPC_Outlet_Temp" type="double"/>
-              <field name="LPT_Outlet_Temp" type="double"/>
-              <field name="Fan_Inlet_Pressure" type="double"/>
-              <field name="Bypass_Duct_Pressure" type="double"/>
-              <field name="Total_HPC_Outlet_Pressure" type="double"/>
-              <field name="Physical_Fan_Speed" type="double"/>
-              <field name="Physical_Core_Speed" type="double"/>
-              <field name="Engine_Pressure_Ratio" type="double"/>
-              <field name="Static_HPC_Outlet_Pressure" type="double"/>
-              <field name="Fuel_Flow_Ratio" type="double"/>
-              <field name="Corrected_Fan_Speed" type="double"/>
-              <field name="Corrected_Core_Speed" type="double"/>
-              <field name="Bypass_Ratio" type="double"/>
-              <field name="Burner_Fuel_Air_Ratio" type="double"/>
-              <field name="Bleed_Enthalpy" type="double"/>
-              <field name="Demanded_Fan_Speed" type="double"/>
-              <field name="Demanded_Crrct_Fan_Speed" type="double"/>
-              <field name="HPT_Coolant_Bleed" type="double"/>
-              <field name="LPT_Coolant_Bleed" type="double"/>
+              <field name="Event_ID" type="int64" key="true"></field>
+              <field name="Engine_ID" type="string"></field>
+              <field name="DATETIME" type="string"></field>
+              <field name="Oper_Set_1" type="double"></field>
+              <field name="Oper_Set_2" type="double"></field>
+              <field name="Oper_Set_3" type="double"></field>
+              <field name="Fan_Inlet_Temp" type="double"></field>
+              <field name="LPC_Outlet_Temp" type="double"></field>
+              <field name="HPC_Outlet_Temp" type="double"></field>
+              <field name="LPT_Outlet_Temp" type="double"></field>
+              <field name="Fan_Inlet_Pressure" type="double"></field>
+              <field name="Bypass_Duct_Pressure" type="double"></field>
+              <field name="Total_HPC_Outlet_Pressure" type="double"></field>
+              <field name="Physical_Fan_Speed" type="double"></field>
+              <field name="Physical_Core_Speed" type="double"></field>
+              <field name="Engine_Pressure_Ratio" type="double"></field>
+              <field name="Static_HPC_Outlet_Pressure" type="double"></field>
+              <field name="Fuel_Flow_Ratio" type="double"></field>
+              <field name="Corrected_Fan_Speed" type="double"></field>
+              <field name="Corrected_Core_Speed" type="double"></field>
+              <field name="Bypass_Ratio" type="double"></field>
+              <field name="Burner_Fuel_Air_Ratio" type="double"></field>
+              <field name="Bleed_Enthalpy" type="double"></field>
+              <field name="Demanded_Fan_Speed" type="double"></field>
+              <field name="Demanded_Crrct_Fan_Speed" type="double"></field>
+              <field name="HPT_Coolant_Bleed" type="double"></field>
+              <field name="LPT_Coolant_Bleed" type="double"></field>
             </fields>
           </schema>
           <connectors>
-            <connector class="fs" name="pub">
+            <connector name="pub" active="true" class="fs">
               <properties>
                 <property name="type"><![CDATA[pub]]></property>
                 <property name="dateformat"><![CDATA[%d%b%Y:%k:%M:%S]]></property>
@@ -56,7 +56,7 @@
             </connector>
           </connectors>
         </window-source>
-        <window-model-reader name="ModelReader" pubsub="true" model-type="astore">
+        <window-model-reader model-type="astore" name="ModelReader" pubsub="true">
           <parameters>
             <properties>
               <property name="reference"><![CDATA[@ESP_PROJECT_HOME@/analytics/turbofan_svdd.astore]]></property>
@@ -68,35 +68,35 @@
         <window-score name="Score_SVDD" pubsub="true">
           <schema>
             <fields>
-              <field name="Engine_ID" type="string"/>
-              <field name="DATETIME" type="string"/>
-              <field name="SVDD_Distance" type="double"/>
-              <field name="SVDD_Score" type="double"/>
-              <field name="Event_ID" type="int64" key="true"/>
-              <field name="Oper_Set_1" type="double"/>
-              <field name="Oper_Set_2" type="double"/>
-              <field name="Oper_Set_3" type="double"/>
-              <field name="Fan_Inlet_Temp" type="double"/>
-              <field name="LPC_Outlet_Temp" type="double"/>
-              <field name="HPC_Outlet_Temp" type="double"/>
-              <field name="LPT_Outlet_Temp" type="double"/>
-              <field name="Fan_Inlet_Pressure" type="double"/>
-              <field name="Bypass_Duct_Pressure" type="double"/>
-              <field name="Total_HPC_Outlet_Pressure" type="double"/>
-              <field name="Physical_Fan_Speed" type="double"/>
-              <field name="Physical_Core_Speed" type="double"/>
-              <field name="Engine_Pressure_Ratio" type="double"/>
-              <field name="Static_HPC_Outlet_Pressure" type="double"/>
-              <field name="Fuel_Flow_Ratio" type="double"/>
-              <field name="Corrected_Fan_Speed" type="double"/>
-              <field name="Corrected_Core_Speed" type="double"/>
-              <field name="Bypass_Ratio" type="double"/>
-              <field name="Burner_Fuel_Air_Ratio" type="double"/>
-              <field name="Bleed_Enthalpy" type="double"/>
-              <field name="Demanded_Fan_Speed" type="double"/>
-              <field name="Demanded_Crrct_Fan_Speed" type="double"/>
-              <field name="HPT_Coolant_Bleed" type="double"/>
-              <field name="LPT_Coolant_Bleed" type="double"/>
+              <field name="Engine_ID" type="string"></field>
+              <field name="DATETIME" type="string"></field>
+              <field name="SVDD_Distance" type="double"></field>
+              <field name="SVDD_Score" type="double"></field>
+              <field name="Event_ID" type="int64" key="true"></field>
+              <field name="Oper_Set_1" type="double"></field>
+              <field name="Oper_Set_2" type="double"></field>
+              <field name="Oper_Set_3" type="double"></field>
+              <field name="Fan_Inlet_Temp" type="double"></field>
+              <field name="LPC_Outlet_Temp" type="double"></field>
+              <field name="HPC_Outlet_Temp" type="double"></field>
+              <field name="LPT_Outlet_Temp" type="double"></field>
+              <field name="Fan_Inlet_Pressure" type="double"></field>
+              <field name="Bypass_Duct_Pressure" type="double"></field>
+              <field name="Total_HPC_Outlet_Pressure" type="double"></field>
+              <field name="Physical_Fan_Speed" type="double"></field>
+              <field name="Physical_Core_Speed" type="double"></field>
+              <field name="Engine_Pressure_Ratio" type="double"></field>
+              <field name="Static_HPC_Outlet_Pressure" type="double"></field>
+              <field name="Fuel_Flow_Ratio" type="double"></field>
+              <field name="Corrected_Fan_Speed" type="double"></field>
+              <field name="Corrected_Core_Speed" type="double"></field>
+              <field name="Bypass_Ratio" type="double"></field>
+              <field name="Burner_Fuel_Air_Ratio" type="double"></field>
+              <field name="Bleed_Enthalpy" type="double"></field>
+              <field name="Demanded_Fan_Speed" type="double"></field>
+              <field name="Demanded_Crrct_Fan_Speed" type="double"></field>
+              <field name="HPT_Coolant_Bleed" type="double"></field>
+              <field name="LPT_Coolant_Bleed" type="double"></field>
             </fields>
           </schema>
           <models>
@@ -142,10 +142,10 @@
             </offline>
           </models>
         </window-score>
-        <window-filter pubsub="true" name="Alerts">
+        <window-filter name="Alerts" pubsub="true">
           <expression><![CDATA[SVDD_Score==1]]></expression>
           <connectors>
-            <connector name="sub" class="fs">
+            <connector name="sub" active="false" class="fs">
               <properties>
                 <property name="type"><![CDATA[sub]]></property>
                 <property name="snapshot"><![CDATA[false]]></property>
@@ -157,9 +157,9 @@
         </window-filter>
       </windows>
       <edges>
-        <edge source="ModelReader" target="Score_SVDD" role="model"/>
-        <edge source="turbofan_data" target="Score_SVDD" role="data"/>
-        <edge source="Score_SVDD" target="Alerts"/>
+        <edge role="model" source="ModelReader" target="Score_SVDD"></edge>
+        <edge role="data" source="turbofan_data" target="Score_SVDD"></edge>
+        <edge source="Score_SVDD" target="Alerts"></edge>
       </edges>
     </contquery>
   </contqueries>
