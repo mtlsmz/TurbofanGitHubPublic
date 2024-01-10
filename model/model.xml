@@ -1,9 +1,9 @@
-<project name="TurbofanGitHubPublic" threads="1" pubsub="auto" heartbeat-interval="1">
+<project name="TurbofanGitHubPublic" threads="1" pubsub="auto" heartbeat-interval="1" luaroot="@ESP_PROJECT_OUTPUT@/luaroot">
   <metadata>
     <meta id="studioUploadedBy">sastest1</meta>
     <meta id="studioUploaded">1704886532064</meta>
     <meta id="studioModifiedBy">sastest1</meta>
-    <meta id="studioModified">1704886548625</meta>
+    <meta id="studioModified">1704886745251</meta>
     <meta id="layout">{"cq1":{"Alerts":{"x":-395,"y":-340},"ModelReader":{"x":-130,"y":-600},"ModelReader1":{"x":65,"y":-320},"Score1":{"x":-220,"y":-165},"Score_SVDD":{"x":-395,"y":-480},"Source1":{"x":-220,"y":-315},"turbofan_data":{"x":-395,"y":-640}}}</meta>
   </metadata>
   <contqueries>
